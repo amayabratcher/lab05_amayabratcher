@@ -40,12 +40,18 @@ void Heap::pop(){
         swap(vdata.at(idx), vdata.at(idx*2+1));
         idx = idx*2+1;
         }
+        else{
+          break;
+        }
       }
       else{
         smaller = vdata.at(idx*2+1) > vdata.at(idx*2+2)? (idx*2+2) : (idx*2+1);
         if(vdata.at(idx) > vdata.at(smaller)){
         swap(vdata.at(idx), vdata.at(smaller));
           idx = smaller;
+      }
+      else{
+          break;
       }
       }
     }
